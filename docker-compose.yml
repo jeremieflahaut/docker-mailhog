@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mail:
+    container_name: mail
+    image: mailhog/mailhog
+    networks:
+      - antibes
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+ 
+networks:
+  antibes:
+    external: true
+    name: antibes
+
